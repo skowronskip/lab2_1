@@ -18,4 +18,15 @@ public class BinarySearchTest {
         int key = 1;
         SearchResult searchResult = BinarySearch.search(key, seq);
     }
+
+    @Test
+    public void testWhenSeqHasOneElementAndKeyIsInSeq() {
+        int[] seq = new int [1];
+        seq[0] = 2;
+        int key = 2;
+        int expectedIndex = 0;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+    }
 }
