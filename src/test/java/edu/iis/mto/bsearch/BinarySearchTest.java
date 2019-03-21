@@ -85,4 +85,19 @@ public class BinarySearchTest {
         Assert.assertTrue(searchResult.isFound());
         Assert.assertEquals(expectedIndex, searchResult.getPosition());
     }
+
+    @Test
+    public void testWhenSeqHasMoreThanOneElementAndKeyIsNotInSeq() {
+        int[] seq = new int [5];
+        seq[0] = 1;
+        seq[1] = 3;
+        seq[2] = 5;
+        seq[3] = 7;
+        seq[4] = 9;
+        int key = 11;
+        int expectedIndex = -1;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+    }
 }
