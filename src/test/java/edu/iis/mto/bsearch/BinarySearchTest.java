@@ -5,6 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class BinarySearchTest {
@@ -26,8 +27,8 @@ public class BinarySearchTest {
         int key = 2;
         int expectedIndex = 0;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+        Assert.assertThat(searchResult.isFound(), is(true));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
 
     @Test
@@ -37,8 +38,8 @@ public class BinarySearchTest {
         int key = 3;
         int expectedIndex = -1;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertFalse(searchResult.isFound());
-        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+        Assert.assertThat(searchResult.isFound(), is(false));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
 
     @Test
@@ -52,8 +53,8 @@ public class BinarySearchTest {
         int key = 1;
         int expectedIndex = 0;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+        Assert.assertThat(searchResult.isFound(), is(true));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
 
     @Test
@@ -67,8 +68,8 @@ public class BinarySearchTest {
         int key = 9;
         int expectedIndex = 4;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+        Assert.assertThat(searchResult.isFound(), is(true));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
 
     @Test
