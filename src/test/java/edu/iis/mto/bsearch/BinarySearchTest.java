@@ -29,4 +29,15 @@ public class BinarySearchTest {
         Assert.assertTrue(searchResult.isFound());
         Assert.assertEquals(expectedIndex, searchResult.getPosition());
     }
+
+    @Test
+    public void testWhenSeqHasOneElementAndKeyIsNotInSeq() {
+        int[] seq = new int [1];
+        seq[0] = 2;
+        int key = 3;
+        int expectedIndex = -1;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+    }
 }
