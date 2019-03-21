@@ -83,8 +83,8 @@ public class BinarySearchTest {
         int key = 5;
         int expectedIndex = 2;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+        Assert.assertThat(searchResult.isFound(), is(true));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
 
     @Test
@@ -98,7 +98,7 @@ public class BinarySearchTest {
         int key = 11;
         int expectedIndex = -1;
         SearchResult searchResult = BinarySearch.search(key, seq);
-        Assert.assertFalse(searchResult.isFound());
-        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+        Assert.assertThat(searchResult.isFound(), is(false));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
 }
