@@ -40,4 +40,19 @@ public class BinarySearchTest {
         Assert.assertFalse(searchResult.isFound());
         Assert.assertEquals(expectedIndex, searchResult.getPosition());
     }
+
+    @Test
+    public void testWhenSeqHasMoreThanOneElementAndKeyIsFirstInSeq() {
+        int[] seq = new int [5];
+        seq[0] = 1;
+        seq[1] = 3;
+        seq[2] = 5;
+        seq[3] = 7;
+        seq[4] = 9;
+        int key = 1;
+        int expectedIndex = 0;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals(expectedIndex, searchResult.getPosition());
+    }
 }
