@@ -101,4 +101,19 @@ public class BinarySearchTest {
         Assert.assertThat(searchResult.isFound(), is(false));
         Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
     }
+
+    @Test
+    public void testWhenSeqHasOnlyOneValueAndKeyIsInSeq() {
+        int[] seq = new int [5];
+        seq[0] = 1;
+        seq[1] = 1;
+        seq[2] = 1;
+        seq[3] = 1;
+        seq[4] = 1;
+        int key = 1;
+        int expectedIndex = 2;
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertThat(searchResult.isFound(), is(true));
+        Assert.assertThat(expectedIndex, is(searchResult.getPosition()));
+    }
 }
